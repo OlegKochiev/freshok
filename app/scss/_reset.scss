@@ -48,19 +48,26 @@ img {
 
 button {
 	cursor: pointer;
+	outline: transparent;
+	box-shadow: transparent;
 }
 
 input,
 button,
 textarea,
-select {
+select,
+address {
 	padding: 0;
 	border: none;
 	font: inherit;
 	background-color: transparent;
+	outline: transparent;
+	box-shadow: transparent;
 }
 
 a {
 	color: inherit;
 	text-decoration: none;
+	outline: transparent;
+	box-shadow: transparent;
 }
