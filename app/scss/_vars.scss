@@ -1,44 +1,16 @@
- $default: #121212;
- $white: #fff;
- $black: #000;
- $white-transparent: rgba(255, 255, 255, 0);
- $white-lite: rgba(255, 255, 255, 0.1);
- $silver-100: #f6f6f6;
- $silver-600: #C1C1C1;
- $dark-500: #505050;
- $dark-800: #31352B;
- $green-100: #eff6e7;
- $green-200: #e0edcf;
- $green-900: #63a60f;
- $green-1000: #4D800C;
- $orange-900: #ff7a00;
- $yellow-900: #ffb800;
- $red-900: #cf3e3b;
- $border-gray-900: rgba(17, 17, 17, 0.2);
- $border-gray-500: rgba(193, 193, 193, 0.3);
-
- %opensans-400 {
- 	font-family: 'Opensans-Regular', sans-serif;
- 	font-weight: 400;
- }
-
- %opensans-600 {
- 	font-family: 'Opensans-SemiBold', sans-serif;
- 	font-weight: 600;
- }
-
- %opensans-700 {
- 	font-family: 'Opensans-Bold', sans-serif;
- 	font-weight: 700;
- }
-
-
- %ruda-600 {
- 	font-family: 'Ruda-SemiBold', sans-serif;
- 	font-weight: 600;
- }
-
- %ruda-900 {
- 	font-family: 'Ruda-Black', sans-serif;
- 	font-weight: 900;
- }
+$white: #fff;
+$black: #000;
+$silver-100: #f6f6f6;
+$silver-600: #C1C1C1;
+$dark-500: #505050;
+$dark-800: #31352B;
+$dark-900: #121212;
+$green-100: #eff6e7;
+$green-200: #e0edcf;
+$green-900: #63a60f;
+$green-1000: #4D800C;
+$orange-900: #ff7a00;
+$yellow-900: #ffb800;
+$red-900: #cf3e3b;
+$border-gray-900: rgba(17, 17, 17, 0.2);
+$border-gray-500: rgba(193, 193, 193, 0.3);

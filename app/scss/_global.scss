@@ -1,26 +1,16 @@
 body {
-	position: relative;
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
 	overflow-x: hidden;
+	font-family: "Opensans", sans-serif;
 	font-size: 14px;
-	color: $default;
+	font-weight: 400;
+	font-style: normal;
+	color: $dark-900;
 	line-height: 1.4;
 	letter-spacing: 0.03em;
-	@extend %opensans-400;
 	background-color: $white;
-}
-
-.main {
-	flex-grow: 1;
-}
-
-.container {
-	max-width: 1320px;
-	width: 100%;
-	margin: 0 auto;
-	padding: 0 15px;
 }
 
 .sr-only {
@@ -36,25 +26,37 @@ body {
 	overflow: hidden;
 }
 
-.input {
-	background-color: $white;
-	padding: 16px 13px 14px 16px;
-	border: 1px solid $silver-600;
-	border-radius: 6px 0 0 6px;
-	transition: border-color 0.3s, box-shadow 0.3s;
+.main {
+	flex-grow: 1;
+}
 
-	&::placeholder {
-		color: $silver-600;
+.container {
+	max-width: 1320px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+.logo {
+	transition: opacity 0.2s;
+
+	&:hover {
+		opacity: 0.5;
 	}
 
 	&:focus {
-		z-index: 0;
-		border: 1px solid $green-900;
-		box-shadow: 0px 0px 0px 3px $green-200;
+		outline: transparent;
+		border-radius: 3px;
+		box-shadow: 0 0 0 2px $green-200;
+	}
+
+	&:active {
+		box-shadow: none;
+		opacity: 0.7;
 	}
 }
 
-.button--green {
+.btn {
 	padding: 12px 24px;
 	font-size: 18px;
 	background-color: $green-900;
@@ -67,17 +69,349 @@ body {
 	}
 
 	&:focus {
-		box-shadow: 0px 0px 0px 4px $green-200;
+		box-shadow: 0 0 0 4px $green-200;
 	}
 
 	&:active {
 		color: rgba(255, 255, 255, 0.5);
-		box-shadow: inset 0px 4px 4px transparentize($black, 0.75);
+		box-shadow: inset 0 4px 4px transparentize($black, 0.75);
 	}
 
 }
 
-.link--white {
+.title {
+	text-align: center;
+	margin-bottom: 30px;
+	font-family: "Ruda",
+		sans-serif;
+	font-size: 32px;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+}
+
+.disabled {
+	display: none;
+}
+
+.top-menu {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 49px;
+	letter-spacing: 0.02em;
+
+
+	&__item {
+		margin-right: 28px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	&__btn {
+		position: relative;
+		font-size: 15px;
+		text-transform: uppercase;
+
+		font-family: "opensans", sans-serif;
+		font-weight: 700;
+		color: $dark-500;
+		border-radius: 3px;
+		border-bottom: 3px solid transparentize($green-900, 1);
+		transition: color 0.3s,
+			border-color 0.3s,
+			box-shadow 0.3s;
+
+		&:hover {
+			color: $green-900;
+		}
+
+		&:focus {
+			box-shadow: 0 0 0 3px $green-200;
+		}
+
+		&:active {
+			color: $dark-500;
+			box-shadow: none;
+			border-radius: 0;
+			border-bottom: 3px solid transparentize($green-900, 0.8);
+		}
+
+	}
+}
+
+.product-card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	max-width: 300px;
+	width: 100%;
+	min-height: 409px;
+	border: 1px solid $border-gray-900;
+	border-radius: 6px;
+	transition: border-color 0.3s;
+
+	&:hover {
+		border: 1px solid $green-900;
+	}
+
+	&__favourite {
+		position: absolute;
+		width: 44px;
+		height: 44px;
+		top: 8px;
+		right: 5px;
+		border-radius: 3px;
+		transition: box-shadow 0.3s, filter 0.3s;
+
+		&::before {
+			position: absolute;
+			content: '';
+			width: 32px;
+			height: 28px;
+			top: 8px;
+			left: 6px;
+			background-image: url('../images/sprite.svg#favourite');
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			transition: filter 0.3s, opacity 0.3s;
+		}
+
+		&--active {
+			&::before {
+				filter: invert(63%) sepia(79%) saturate(655%) hue-rotate(359deg) brightness(102%) contrast(104%);
+				opacity: 0.5;
+			}
+
+		}
+
+		&:hover {
+			&::before {
+				filter: invert(66%) sepia(85%) saturate(1088%) hue-rotate(359deg) brightness(101%) contrast(105%);
+				opacity: 1;
+			}
+		}
+
+		&:active {
+			&::before {
+				filter: invert(63%) sepia(79%) saturate(655%) hue-rotate(359deg) brightness(102%) contrast(104%);
+				opacity: 0.5;
+			}
+		}
+
+		&:focus {
+			box-shadow: 0 0 0 3px $green-200;
+		}
+	}
+
+	&__image-link {
+		position: relative;
+		display: block;
+		max-width: 300px;
+		width: 100%;
+		max-height: 225px;
+		margin-top: 55px;
+		margin-bottom: 18px;
+		overflow: hidden;
+
+		&::before {
+			position: absolute;
+			content: '';
+			width: 48px;
+			height: 48px;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			border-radius: 50%;
+			background-image: url("../images/icons/show_card.png");
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: auto;
+			opacity: 0;
+			z-index: 2;
+			transition: opacity 0.3s;
+		}
+
+		&::after {
+			position: absolute;
+			content: '';
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background-color: transparentize($black, 0.9);
+			opacity: 0;
+			z-index: 1;
+			transition: opacity 0.3s;
+		}
+
+		&:hover,
+		&:focus {
+
+			&::before,
+			&::after {
+				opacity: 1;
+			}
+		}
+
+		&:hover .product-card__image {
+			transform: scale(1.1);
+		}
+
+		&:focus {
+			outline: transparent;
+			box-shadow: 0 0 0 1px transparentize($green-900, 0.5);
+		}
+
+
+	}
+
+	&__image {
+		max-width: 300px;
+		width: 100%;
+		height: 225px;
+		height: auto;
+		object-fit: cover;
+		transition: transform 0.3s;
+	}
+
+	&__desc {
+		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: flex-start;
+		margin-bottom: 15px;
+		padding: 0 18px;
+	}
+
+	&__name {
+		font-family: "Opensans", sans-serif;
+		font-weight: 600;
+		margin-bottom: 6px;
+	}
+
+	&__name-link {
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+		line-clamp: 3;
+		box-orient: vertical;
+		border-radius: 3px;
+		overflow-wrap: break-word;
+
+		&:hover {
+			text-decoration: underline;
+		}
+
+		&:focus {
+			outline: transparent;
+			box-shadow: 0 0 0 1px transparentize($green-900, 0.5);
+		}
+	}
+
+	.prices {
+
+		margin-top: auto;
+
+		&__item {
+			&--old {
+				position: relative;
+				width: fit-content;
+				color: $silver-600;
+
+				&::before {
+					position: absolute;
+					content: "";
+					width: 100%;
+					height: 50%;
+					border-bottom: 1px solid $silver-600;
+					transform: rotate(-14deg);
+				}
+			}
+		}
+	}
+
+	.badges {
+		position: absolute;
+		top: 11px;
+		left: 11px;
+		font-size: 10px;
+		font-family: "opensans", sans-serif;
+		font-weight: 700;
+		z-index: 2;
+
+		&__item {
+			width: fit-content;
+			margin-bottom: 6px;
+			padding: 3px 6px;
+			border-radius: 6px;
+			color: $white;
+			text-transform: uppercase;
+			line-height: 1;
+
+			&--new {
+				background-color: $green-900;
+			}
+
+			&--sale {
+				background-color: $red-900;
+			}
+
+			&--hit {
+				background-color: $orange-900;
+			}
+		}
+
+
+	}
+
+	&__basket {
+		position: absolute;
+		bottom: 15px;
+		right: 17px;
+		width: 32px;
+		height: 32px;
+		padding: 0;
+		border-radius: 3px;
+		background-color: $green-900;
+
+		&::before {
+			position: absolute;
+			content: '';
+			top: 0;
+			left: 0;
+			width: 32px;
+			height: 32px;
+			background-image: url('../images/sprite.svg#basket');
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
+	}
+}
+
+.default-input {
+	background-color: $white;
+	padding: 16px 13px 14px 16px;
+	border: 1px solid $silver-600;
+	border-radius: 6px 0 0 6px;
+	transition: border-color 0.3s, box-shadow 0.3s;
+
+	&::placeholder {
+		color: $silver-600;
+	}
+
+	&:focus {
+		outline: transparent;
+		z-index: 1;
+		border: 1px solid $green-900;
+		box-shadow: 0 0 0 3px $green-200;
+	}
+}
+
+.white--link {
 	color: $white;
 	border-radius: 3px;
 	transition: color 0.3s, opacity 0.3s, background-color 0.3s, box-shadow 0.3s;
@@ -88,7 +422,7 @@ body {
 
 	&:focus {
 		background-color: rgba(255, 255, 255, 0.0001);
-		box-shadow: 0px 0px 0px 3px $green-100;
+		box-shadow: 0 0 0 3px $green-100;
 
 	}
 
@@ -98,8 +432,9 @@ body {
 	}
 }
 
-.link--black {
-	@extend %opensans-700;
+.black-link {
+	font-family: "Opensans", sans-serif;
+	font-weight: 700;
 	color: $dark-500;
 	border-radius: 3px;
 	border-bottom: 3px solid transparentize($green-900, 1);
@@ -110,7 +445,7 @@ body {
 	}
 
 	&:focus {
-		box-shadow: 0px 0px 0px 3px $green-200;
+		box-shadow: 0 0 0 3px $green-200;
 	}
 
 	&:active {
@@ -122,59 +457,25 @@ body {
 
 }
 
-.link--icon {
-	border-radius: 3px;
-	background-color: $white-transparent;
-	transition: background-color 0.3s, box-shadow 0.3s, opacity 0.3s;
+// + 
+.white-link {
+	transition: opacity 0.2s,
+		color 0.2s;
+	outline: transparent;
 
 	&:hover {
-		background-color: $white-lite;
+		opacity: 0.6;
 	}
 
 	&:focus {
-		box-shadow: 0px 0px 0px 3px $green-100;
+		border-radius: 3px;
+		box-shadow: 0 0 0 3px $green-100;
 	}
 
 	&:active {
-		opacity: 0.5;
-		box-shadow: none;
-	}
-}
-
-.link--social {
-	border-radius: 3px;
-	transition: background-color 0.3s, box-shadow 0.3s, opacity 0.3s;
-
-	&:hover {
-		opacity: 0.7;
-	}
-
-	&:focus {
-		box-shadow: 0px 0px 0px 3px $green-100;
-	}
-
-	&:active {
-		box-shadow: none;
-	}
-}
-
-.header__menu--active {
-	.header__list {
 		opacity: 1;
-		visibility: visible;
-	}
-
-	.header__button {
-		border-radius: 6px 6px 0 0;
-		background-color: $green-200;
-
-		&::after {
-			transform: scale(1, -1);
-		}
-
-		&::before {
-			transform: scale(-1, 1);
-		}
+		color: $green-200;
+		box-shadow: none;
 	}
 }
 
@@ -246,7 +547,8 @@ body {
 		background-color: $white;
 		border-radius: 3px;
 		border: 1px solid $silver-600;
-		@extend %opensans-600;
+		font-family: "opensans", sans-serif;
+		font-weight: 600;
 	}
 
 	&__item-img {
@@ -264,7 +566,8 @@ body {
 	&__item-price,
 	&__item-total,
 	&__total-price {
-		@extend %opensans-600;
+		font-family: "opensans", sans-serif;
+		font-weight: 600;
 		font-size: 20px;
 		line-height: 1;
 		color: $dark-500;
