@@ -1,9 +1,23 @@
 $(function () {
 	$('.main-slider__list').slick({
-		prevArrow: $('.main-slider__arrow--prev'),
-		nextArrow: $('.main-slider__arrow--next'),
-		fade: true
+		prevArrow: `<button class="main-slider__arrow main-slider__arrow--prev" type="button" aria-label="Стрелка вперед"></button>`,
+		nextArrow: `<button class="main-slider__arrow main-slider__arrow--next" type="button" aria-label="Стрелка назад"></button>`,
+		fade: true,
+		responsive: [{
+			breakpoint: 768,
+			settings: {
+				arrows: false,
+				dots: true
+			}
+		}]
 	})
+	$('.brands__list').slick({
+		infinite: true,
+		slidesToShow: 6,
+		variableWidth: true
+	})
+
+
 
 	$('.header-catalog').on('click', function () {
 		$('.header-catalog').toggleClass('header-catalog--active');

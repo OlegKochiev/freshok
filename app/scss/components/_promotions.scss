@@ -1,0 +1,140 @@
+.promotions {
+	padding: 71px 0;
+	background-color: $silver-100;
+
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-gap: 30px;
+		margin-bottom: 46px;
+
+		@include media-1(1200) {
+			grid-template-columns: repeat(3, 1fr);
+			justify-content: center;
+			justify-items: auto;
+		}
+
+		@include media-3(768) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include media-4(576) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	.product-card {
+		flex-direction: row;
+		justify-content: space-between;
+		max-width: 300px;
+		width: 100%;
+		min-height: 124px;
+		padding: 12px;
+		background-color: $white;
+
+		@include media-1(1200) {
+			margin: 0 auto;
+		}
+
+		&__image-link {
+			max-width: 100px;
+			max-height: 100px;
+			margin: 0 10px 0 0;
+			overflow: visible;
+
+			&:hover {
+
+				&::before,
+				&::after {
+					display: none;
+				}
+			}
+		}
+
+		&__image {
+			width: 100%;
+			height: 100%;
+		}
+
+		&__desc {
+			margin: 0;
+			padding: 0;
+		}
+
+		&__name {
+			flex-grow: 1;
+			margin-bottom: 0;
+		}
+
+		&__label {
+			font-size: 10px;
+			font-weight: 600;
+			text-transform: uppercase;
+			margin-bottom: 3px;
+
+			&--green {
+				color: $green-900;
+			}
+
+			&--red {
+				color: $red-900;
+			}
+
+			&--silver {
+				color: $silver-600;
+			}
+		}
+
+		&__raiting {
+			position: relative;
+			align-self: flex-end;
+			margin-right: 20px;
+			font-weight: 700;
+
+			&::before {
+				content: '';
+				position: absolute;
+				top: 3px;
+				left: 24px;
+				width: 16px;
+				height: 16px;
+				background-image: url('../images/sprite.svg#star_raiting');
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-size: cover;
+			}
+		}
+
+		.prices {
+			display: flex;
+			flex-direction: row-reverse;
+			align-items: flex-end;
+
+			&__item {
+				margin-right: 10px;
+				font-size: 20px;
+				font-weight: 600;
+				line-height: 1;
+
+				span {
+					font-size: 12px;
+					line-height: 1;
+				}
+
+				&--old {
+					font-size: 12px;
+					font-weight: 400;
+				}
+			}
+		}
+
+		.badges {
+			top: 13px;
+			left: 10px;
+		}
+	}
+
+	&__btn-more {
+		margin: 0 auto;
+	}
+}

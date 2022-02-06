@@ -1,0 +1,29 @@
+.brands {
+	padding: 70px 0 70px;
+
+	&__list {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	}
+
+	&__item {
+		width: 80px;
+		margin-right: 15px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	&__image {
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+		transition: opacity 0.2s;
+
+		&:hover {
+			opacity: 0.5;
+		}
+	}
+}

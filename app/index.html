@@ -16,6 +16,25 @@
 		<nav class="header__nav">
 			<div class="header__top header-top">
 				<div class="header-top__container container">
+
+					<div class="header-top__burger-wrapper burger">
+						<div class="burger__menu">
+
+							<div class="burger__header-top">
+								<a class="burger__logo logo" href="#">
+									<img class="logo__img" src="images/burger_logo.png" alt="Логотип">
+								</a>
+
+								<button class="burger__close-btn"></button>
+							</div>
+
+						</div>
+
+						<button class="burger__button">
+							<span></span>
+						</button>
+					</div>
+
 					<ul class="header-top__list">
 						<li class="header-top__item">
 							<a class="header-top__link header-top__link--delivery" href="#">
@@ -104,8 +123,9 @@
 					</div>
 
 					<form class="header-bottom__form header-form" action="#">
+						<label class="sr-only" for="headerFormInput">Поле ввода поиска по магазину</label>
 						<input class="header-form__input default-input" type="search" id="headerFormInput" name="header-form-input"
-							placeholder="Найти в магазине ..." required aria-label="Поиск по магазину">
+							placeholder="Найти в магазине ..." required>
 
 						<button class="header-form__btn" type="submit">
 							поиск
@@ -114,8 +134,7 @@
 
 					<ul class="header-bottom__icons header-icons">
 						<li class="header-icons__item">
-							<a class="header-icons__link header-icons__link--user" href="#" aria-label="Перейти в личный кабинет">
-							</a>
+							<a class="header-icons__link header-icons__link--user" href="#" aria-label="Перейти в личный кабинет"></a>
 						</li>
 
 						<li class="header-icons__item">
@@ -142,62 +161,51 @@
 		<section class="main__slider main-slider">
 			<h2 class="sr-only">Крутые акции</h2>
 			<ul class="main-slider__list">
-				<li class="main-slider__item" style="background-image: url('images/slider_bg1.jpg');">
-					<button class="main-slider__arrow main-slider__arrow--prev" type="button"
-						aria-label="Стрелка вперед"></button>
-
-					<button class="main-slider__arrow main-slider__arrow--next" type="button" aria-label="Стрелка назад"></button>
-
-					<div class="main-slider__item-inner">
-						<h3 class="main-slider__title">
-							СВЕЖАЧОК ВАМ в ХАТУ
-							<span>Скидка -50%</span>
-						</h3>
-
-						<p class="main-slider__text">
-							Только с 7 по 13 июля скидка на сезонные фрукты и овощи до 50%. Торопитесь!
-						</p>
-
-						<button class="main-slider__btn btn" type="button">
-							Купить сейчас
-						</button>
+				<li class="main-slider__item">
+					<div class="main-slider__item-inner" style="background-image: url('images/slider_bg1.jpg');">
+						<div class="main-slider__container">
+							<h3 class="main-slider__title">
+								СВЕЖАЧОК ВАМ в ХАТУ
+								<span>Скидка -50%</span>
+							</h3>
+							<p class="main-slider__text">
+								Только с 7 по 13 июля скидка на сезонные фрукты и овощи до 50%. Торопитесь!
+							</p>
+							<a class="main-slider__link btn" href="#">
+								Купить сейчас
+							</a>
+						</div>
 					</div>
 				</li>
 
-				<li class="main-slider__item" style="background-image: url('images/slider_bg2.jpg');">
-					<button class="main-slider__arrow main-slider__arrow--prev" type="button"
-						aria-label="Стрелка вперед"></button>
-
-					<button class="main-slider__arrow main-slider__arrow--next" type="button" aria-label="Стрелка назад"></button>
-					<div class="main-slider__item-inner">
-						<h3 class="main-slider__title">
-							НАКРУТИ СЕБЕ ТОМАТОВ
-							<span>АКЦИЯ: 3 кг по цене 1</span>
-						</h3>
-
-						<p class="main-slider__text">
-							Только с 12 по 15 июля скидка на домашние помидорчики
-						</p>
-
-						<button class="main-slider__btn btn" type="button">
-							Купить сейчас
-						</button>
+				<li class="main-slider__item">
+					<div class="main-slider__item-inner" style="background-image: url('images/slider_bg2.jpg');">
+						<div class="main-slider__container">
+							<h3 class="main-slider__title">
+								НАКРУТИ СЕБЕ ТОМАТОВ
+								<span>АКЦИЯ: 3 кг по цене 1</span>
+							</h3>
+							<p class="main-slider__text">
+								Только с 12 по 15 июля скидка на домашние помидорчики
+							</p>
+							<a class="main-slider__link btn" href="#">
+								Купить сейчас
+							</a>
+						</div>
 					</div>
 				</li>
 
-				<li class="main-slider__item" style="background-image: url('images/slider_bg3.jpg');">
-					<button class="main-slider__arrow main-slider__arrow--prev" type="button"
-						aria-label="Стрелка вперед"></button>
-
-					<button class="main-slider__arrow main-slider__arrow--next" type="button" aria-label="Стрелка назад"></button>
-					<div class="main-slider__item-inner">
-						<h3 class="main-slider__title">
-							Пусть остальные позеленеют от зависти
-							<span>Распродажа зелени</span>
-						</h3>
-						<button class="main-slider__btn btn" type="button">
-							Купить сейчас
-						</button>
+				<li class="main-slider__item">
+					<div class="main-slider__item-inner" style="background-image: url('images/slider_bg3.jpg');">
+						<div class="main-slider__container">
+							<h3 class="main-slider__title">
+								Пусть остальные позеленеют от зависти
+								<span>Распродажа зелени</span>
+							</h3>
+							<a class="main-slider__link btn" href="#">
+								Купить сейчас
+							</a>
+						</div>
 					</div>
 				</li>
 			</ul>
@@ -292,17 +300,20 @@
 									</a>
 								</h3>
 
-								<ul class="product-card__prices prices">
-									<li class="prices__item prices__item--old">
-										1999 <span>₽</span>
-									</li>
-									<li class="prices__item">
-										999 <span>₽</span>
-									</li>
-								</ul>
-							</div>
+								<div class="product-card__inner">
+									<ul class="product-card__prices prices">
+										<li class="prices__item prices__item--old">
+											1999<span>₽</span>
+										</li>
 
-							<button class="product-card__basket btn" type="button" aria-label="Добавить в корзину"></button>
+										<li class="prices__item">
+											999<span>₽</span>
+										</li>
+									</ul>
+
+									<button class="product-card__basket btn" type="button" aria-label="Добавить в корзину"></button>
+								</div>
+							</div>
 						</article>
 					</li>
 
@@ -334,17 +345,20 @@
 									</a>
 								</h3>
 
-								<ul class="product-card__prices prices">
-									<li class="prices__item prices__item--old disabled">
-										199 <span>₽</span>
-									</li>
-									<li class="prices__item">
-										999 <span>₽</span>
-									</li>
-								</ul>
-							</div>
+								<div class="product-card__inner">
+									<ul class="product-card__prices prices">
+										<li class="prices__item prices__item--old">
+											199<span>₽</span>
+										</li>
 
-							<button class="product-card__basket btn" type="button" aria-label="Добавить в корзину"></button>
+										<li class="prices__item">
+											999<span>₽</span>
+										</li>
+									</ul>
+
+									<button class="product-card__basket btn" type="button" aria-label="Добавить в корзину"></button>
+								</div>
+							</div>
 						</article>
 					</li>
 
@@ -376,17 +390,20 @@
 									</a>
 								</h3>
 
-								<ul class="product-card__prices prices">
-									<li class="prices__item prices__item--old disabled">
-										1019 <span>₽</span>
-									</li>
-									<li class="prices__item ">
-										999 <span>₽</span>
-									</li>
-								</ul>
-							</div>
+								<div class="product-card__inner">
+									<ul class="product-card__prices prices">
+										<li class="prices__item prices__item--old">
+											1019<span>₽</span>
+										</li>
 
-							<button class="product-card__basket btn" type="button" aria-label="Добавить в корзину"></button>
+										<li class="prices__item">
+											999<span>₽</span>
+										</li>
+									</ul>
+
+									<button class="product-card__basket btn" type="button" aria-label="Добавить в корзину"></button>
+								</div>
+							</div>
 						</article>
 					</li>
 
@@ -418,17 +435,20 @@
 									</a>
 								</h3>
 
-								<ul class="product-card__prices prices">
-									<li class="prices__item prices__item--old disabled">
-										600 <span>₽</span>
-									</li>
-									<li class="prices__item">
-										999 <span>₽</span>
-									</li>
-								</ul>
-							</div>
+								<div class="product-card__inner">
+									<ul class="product-card__prices prices">
+										<li class="prices__item prices__item--old disabled">
+											900<span>₽</span>
+										</li>
 
-							<button class="product-card__basket btn" type="button" aria-label="Добавить в корзину"></button>
+										<li class="prices__item">
+											600<span>₽</span>
+										</li>
+									</ul>
+
+									<button class="product-card__basket btn" type="button" aria-label="Добавить в корзину"></button>
+								</div>
+							</div>
 						</article>
 					</li>
 
@@ -460,17 +480,20 @@
 									</a>
 								</h3>
 
-								<ul class="product-card__prices prices">
-									<li class="prices__item prices__item--old disabled">
-										49 <span>₽</span>
-									</li>
-									<li class="prices__item">
-										999 <span>₽</span>
-									</li>
-								</ul>
-							</div>
+								<div class="product-card__inner">
+									<ul class="product-card__prices prices">
+										<li class="prices__item prices__item--old disabled">
+											49<span>₽</span>
+										</li>
 
-							<button class="product-card__basket btn" type="button" aria-label="Добавить в корзину"></button>
+										<li class="prices__item">
+											999<span>₽</span>
+										</li>
+									</ul>
+
+									<button class="product-card__basket btn" type="button" aria-label="Добавить в корзину"></button>
+								</div>
+							</div>
 						</article>
 					</li>
 
@@ -502,17 +525,20 @@
 									</a>
 								</h3>
 
-								<ul class="product-card__prices prices">
-									<li class="prices__item prices__item--old">
-										299 <span>₽</span>
-									</li>
-									<li class="prices__item">
-										199 <span>₽</span>
-									</li>
-								</ul>
-							</div>
+								<div class="product-card__inner">
+									<ul class="product-card__prices prices">
+										<li class="prices__item prices__item--old">
+											299<span>₽</span>
+										</li>
 
-							<button class="product-card__basket btn" type="button" aria-label="Добавить в корзину"></button>
+										<li class="prices__item">
+											199<span>₽</span>
+										</li>
+									</ul>
+
+									<button class="product-card__basket btn" type="button" aria-label="Добавить в корзину"></button>
+								</div>
+							</div>
 						</article>
 					</li>
 
@@ -544,17 +570,20 @@
 									</a>
 								</h3>
 
-								<ul class="product-card__prices prices">
-									<li class="prices__item prices__item--old disabled">
-										877 <span>₽</span>
-									</li>
-									<li class="prices__item">
-										199 <span>₽</span>
-									</li>
-								</ul>
-							</div>
+								<div class="product-card__inner">
+									<ul class="product-card__prices prices">
+										<li class="prices__item prices__item--old disabled">
+											1019<span>₽</span>
+										</li>
 
-							<button class="product-card__basket btn" type="button" aria-label="Добавить в корзину"></button>
+										<li class="prices__item">
+											199<span>₽</span>
+										</li>
+									</ul>
+
+									<button class="product-card__basket btn" type="button" aria-label="Добавить в корзину"></button>
+								</div>
+							</div>
 						</article>
 					</li>
 
@@ -586,21 +615,24 @@
 									</a>
 								</h3>
 
-								<ul class="product-card__prices prices">
-									<li class="prices__item prices__item--old disabled">
-										349 <span>₽</span>
-									</li>
-									<li class="prices__item">
-										199 <span>₽</span>
-									</li>
-								</ul>
-							</div>
+								<div class="product-card__inner">
+									<ul class="product-card__prices prices">
+										<li class="prices__item prices__item--old disabled">
+											1019<span>₽</span>
+										</li>
 
-							<button class="product-card__basket btn" type="button" aria-label="Добавить в корзину"></button>
+										<li class="prices__item">
+											199<span>₽</span>
+										</li>
+									</ul>
+
+									<button class="product-card__basket btn" type="button" aria-label="Добавить в корзину"></button>
+								</div>
+							</div>
 						</article>
 					</li>
 				</ul>
-				<button class="top-products__btn-more" type="button">
+				<button class="top-products__btn btn btn--white" type="button">
 					Показать еще
 				</button>
 			</div>
@@ -613,44 +645,45 @@
 					<li class="news-dashboard__item news-dashboard__item--fruits"
 						style="background-image: url('images/fruits_bg.jpg');">
 						<p class="news-dashboard__text">
-							СВЕЖАЙШИЕ ФРУКТЫ
+							сведайшие фрукты
 						</p>
 
 						<h3 class="news-dashboard__title">
-							НАЧНИ ФРУКТОВОЕ ЛЕТО
-							ВСЕГО От 99 ₽
+							начни фруктовое лето
+							всего от 99 ₽
 						</h3>
 
 						<a class="news-dashboard__link" href="#">
-							ПЕРЕЙТИ К ПОКУПКАМ
+							перейти к покупкам
 						</a>
 					</li>
-					<li class="news-dashboard__item" style="background-image: url('images/veg_bg.jpg');">
+					<li class="news-dashboard__item news-dashboard__item--sales"
+						style="background-image: url('images/veg_bg.jpg');">
 						<p class="news-dashboard__text">
-							СЕЗОННАЯ РАСПРОДАЖА
+							сезонная распродажа
 						</p>
 
 						<h3 class="news-dashboard__title">
-							ОВОЩЕПАД
-							ДО -50%
+							овощепад
+							до -50%
 						</h3>
 
-						<a class="news-dashboard__link" href="#">
-							ПЕРЕЙТИ К ПОКУПКАМ
+						<a class="news-dashboard__link news-dashboard__item--discounts" href="#">
+							перейти к покупкам
 						</a>
 					</li>
 					<li class="news-dashboard__item" style="background-image: url('images/breadbg.jpg');">
 						<p class="news-dashboard__text">
-							НЯМ-НЯМ
+							ням-ням
 						</p>
 
 						<h3 class="news-dashboard__title">
-							СВЕЖИЙ
-							ХЛЕБЧИК
+							свежий
+							хлебчик
 						</h3>
 
 						<a class="news-dashboard__link" href="#">
-							ПЕРЕЙТИ К ПОКУПКАМ
+							перейти к покупкам
 						</a>
 					</li>
 				</ul>
@@ -685,8 +718,8 @@
 							</ul>
 
 							<a class="product-card__image-link" href="#">
-								<img class="product-card__image" src="images/icons/card-icon1.png" alt="картинка товара" width="100"
-									height="100">
+								<img class="product-card__image" src="images/icons/card-icon1.png" alt="картинка товара" max-width="100"
+									max-height="100">
 							</a>
 
 							<div class="product-card__desc">
@@ -698,18 +731,20 @@
 
 								<span class="product-card__label product-card__label--green">в наличии</span>
 
-								<ul class="product-card__prices prices">
-									<li class="prices__item prices__item--old">
-										1999 <span>₽</span>
-									</li>
-									<li class="prices__item">
-										999<span>₽</span>
-									</li>
-								</ul>
+								<div class="product-card__inner">
+									<ul class="product-card__prices prices">
+										<li class="prices__item prices__item--old">
+											1999<span>₽</span>
+										</li>
+										<li class="prices__item">
+											999<span>₽</span>
+										</li>
+									</ul>
 
-								<span class="product-card__raiting">
-									4.5
-								</span>
+									<span class="product-card__raiting">
+										4.5
+									</span>
+								</div>
 							</div>
 						</article>
 					</li>
@@ -723,8 +758,8 @@
 							</ul>
 
 							<a class="product-card__image-link" href="#">
-								<img class="product-card__image" src="images/icons/card-icon2.png" alt="картинка товара" width="100"
-									height="100">
+								<img class="product-card__image" src="images/icons/card-icon2.png" alt="картинка товара" max-width="100"
+									max-height="100">
 							</a>
 
 							<div class="product-card__desc">
@@ -736,18 +771,20 @@
 
 								<span class="product-card__label product-card__label--red">заканчивается</span>
 
-								<ul class="product-card__prices prices">
-									<li class="prices__item prices__item--old">
-										877 <span>₽</span>
-									</li>
-									<li class="prices__item">
-										777<span>₽</span>
-									</li>
-								</ul>
+								<div class="product-card__inner">
+									<ul class="product-card__prices prices">
+										<li class="prices__item prices__item--old">
+											877<span>₽</span>
+										</li>
+										<li class="prices__item">
+											777<span>₽</span>
+										</li>
+									</ul>
 
-								<span class="product-card__raiting">
-									4.9
-								</span>
+									<span class="product-card__raiting">
+										4.9
+									</span>
+								</div>
 							</div>
 						</article>
 					</li>
@@ -761,8 +798,8 @@
 							</ul>
 
 							<a class="product-card__image-link" href="#">
-								<img class="product-card__image" src="images/icons/card-icon3.png" alt="картинка товара" width="100"
-									height="100">
+								<img class="product-card__image" src="images/icons/card-icon3.png" alt="картинка товара" max-width="100"
+									max-height="100">
 							</a>
 
 							<div class="product-card__desc">
@@ -774,18 +811,20 @@
 
 								<span class="product-card__label product-card__label--silver">нет в наличии</span>
 
-								<ul class="product-card__prices prices">
-									<li class="prices__item prices__item--old">
-										600 <span>₽</span>
-									</li>
-									<li class="prices__item">
-										440<span>₽</span>
-									</li>
-								</ul>
+								<div class="product-card__inner">
+									<ul class="product-card__prices prices">
+										<li class="prices__item prices__item--old">
+											600<span>₽</span>
+										</li>
+										<li class="prices__item">
+											440<span>₽</span>
+										</li>
+									</ul>
 
-								<span class="product-card__raiting">
-									5.0
-								</span>
+									<span class="product-card__raiting">
+										5.0
+									</span>
+								</div>
 							</div>
 						</article>
 					</li>
@@ -799,8 +838,8 @@
 							</ul>
 
 							<a class="product-card__image-link" href="#">
-								<img class="product-card__image" src="images/icons/card-icon4.png" alt="картинка товара" width="100"
-									height="100">
+								<img class="product-card__image" src="images/icons/card-icon4.png" alt="картинка товара" max-width="100"
+									max-height="100">
 							</a>
 
 							<div class="product-card__desc">
@@ -812,18 +851,20 @@
 
 								<span class="product-card__label product-card__label--green">в наличии</span>
 
-								<ul class="product-card__prices prices">
-									<li class="prices__item prices__item--old">
-										960 <span>₽</span>
-									</li>
-									<li class="prices__item">
-										660<span>₽</span>
-									</li>
-								</ul>
+								<div class="product-card__inner">
+									<ul class="product-card__prices prices">
+										<li class="prices__item prices__item--old">
+											960<span>₽</span>
+										</li>
+										<li class="prices__item">
+											660<span>₽</span>
+										</li>
+									</ul>
 
-								<span class="product-card__raiting">
-									5.0
-								</span>
+									<span class="product-card__raiting">
+										5.0
+									</span>
+								</div>
 							</div>
 						</article>
 					</li>
@@ -837,8 +878,8 @@
 							</ul>
 
 							<a class="product-card__image-link" href="#">
-								<img class="product-card__image" src="images/icons/card-icon5.png" alt="картинка товара" width="100"
-									height="100">
+								<img class="product-card__image" src="images/icons/card-icon5.png" alt="картинка товара" max-width="100"
+									max-height="100">
 							</a>
 
 							<div class="product-card__desc">
@@ -850,18 +891,20 @@
 
 								<span class="product-card__label product-card__label--green">в наличии</span>
 
-								<ul class="product-card__prices prices">
-									<li class="prices__item prices__item--old">
-										1199 <span>₽</span>
-									</li>
-									<li class="prices__item">
-										999<span>₽</span>
-									</li>
-								</ul>
+								<div class="product-card__inner">
+									<ul class="product-card__prices prices">
+										<li class="prices__item prices__item--old">
+											1199<span>₽</span>
+										</li>
+										<li class="prices__item">
+											999<span>₽</span>
+										</li>
+									</ul>
 
-								<span class="product-card__raiting">
-									4.5
-								</span>
+									<span class="product-card__raiting">
+										4.5
+									</span>
+								</div>
 							</div>
 						</article>
 					</li>
@@ -875,8 +918,8 @@
 							</ul>
 
 							<a class="product-card__image-link" href="#">
-								<img class="product-card__image" src="images/icons/card-icon6.png" alt="картинка товара" width="100"
-									height="100">
+								<img class="product-card__image" src="images/icons/card-icon6.png" alt="картинка товара" max-width="100"
+									max-height="100">
 							</a>
 
 							<div class="product-card__desc">
@@ -888,18 +931,20 @@
 
 								<span class="product-card__label product-card__label--red">заканчивается</span>
 
-								<ul class="product-card__prices prices">
-									<li class="prices__item prices__item--old">
-										230 <span>₽</span>
-									</li>
-									<li class="prices__item">
-										180<span>₽</span>
-									</li>
-								</ul>
+								<div class="product-card__inner">
+									<ul class="product-card__prices prices">
+										<li class="prices__item prices__item--old">
+											230<span>₽</span>
+										</li>
+										<li class="prices__item">
+											180<span>₽</span>
+										</li>
+									</ul>
 
-								<span class="product-card__raiting">
-									4.9
-								</span>
+									<span class="product-card__raiting">
+										4.9
+									</span>
+								</div>
 							</div>
 						</article>
 					</li>
@@ -913,8 +958,8 @@
 							</ul>
 
 							<a class="product-card__image-link" href="#">
-								<img class="product-card__image" src="images/icons/card-icon7.png" alt="картинка товара" width="100"
-									height="100">
+								<img class="product-card__image" src="images/icons/card-icon7.png" alt="картинка товара" max-width="100"
+									max-height="100">
 							</a>
 
 							<div class="product-card__desc">
@@ -926,18 +971,20 @@
 
 								<span class="product-card__label product-card__label--green">в наличии</span>
 
-								<ul class="product-card__prices prices">
-									<li class="prices__item prices__item--old">
-										5990 <span>₽</span>
-									</li>
-									<li class="prices__item">
-										3990<span>₽</span>
-									</li>
-								</ul>
+								<div class="product-card__inner">
+									<ul class="product-card__prices prices">
+										<li class="prices__item prices__item--old">
+											5990<span>₽</span>
+										</li>
+										<li class="prices__item">
+											3990<span>₽</span>
+										</li>
+									</ul>
 
-								<span class="product-card__raiting">
-									4.8
-								</span>
+									<span class="product-card__raiting">
+										4.8
+									</span>
+								</div>
 							</div>
 						</article>
 					</li>
@@ -951,8 +998,8 @@
 							</ul>
 
 							<a class="product-card__image-link" href="#">
-								<img class="product-card__image" src="images/icons/card-icon8.png" alt="картинка товара" width="100"
-									height="100">
+								<img class="product-card__image" src="images/icons/card-icon8.png" alt="картинка товара" max-width="100"
+									max-height="100">
 							</a>
 
 							<div class="product-card__desc">
@@ -964,18 +1011,20 @@
 
 								<span class="product-card__label product-card__label--green">в наличии</span>
 
-								<ul class="product-card__prices prices">
-									<li class="prices__item prices__item--old">
-										599<span>₽</span>
-									</li>
-									<li class="prices__item">
-										499 <span>₽</span>
-									</li>
-								</ul>
+								<div class="product-card__inner">
+									<ul class="product-card__prices prices">
+										<li class="prices__item prices__item--old">
+											599<span>₽</span>
+										</li>
+										<li class="prices__item">
+											499<span>₽</span>
+										</li>
+									</ul>
 
-								<span class="product-card__raiting">
-									4.6
-								</span>
+									<span class="product-card__raiting">
+										4.6
+									</span>
+								</div>
 							</div>
 						</article>
 					</li>
@@ -991,32 +1040,28 @@
 				<h2 class="sr-only">Бренды с которыми ми работаем</h2>
 				<ul class="brands__list">
 					<li class="brands__item">
-						<a class="brands__link" href="#"
-							style="background-image: url('images/sprite.svg#sprite'); height: 34px;"></a>
+						<img class="brands__image" src="images/sprite.svg#sprite" width="100%" height="60" alt="Логотип Спрайт">
 					</li>
 
 					<li class="brands__item">
-						<a class="brands__link" href="#"
-							style="background-image: url('images/sprite.svg#pepper'); height: 57px;"></a>
+						<img class="brands__image" src="images/sprite.svg#pepper" width="80" height="60"
+							alt="Логотип Доктор Пеппер">
 					</li>
 
 					<li class="brands__item">
-						<a class="brands__link" href="#" style="background-image: url('images/sprite.svg#Coca'); height: 26px;"></a>
+						<img class="brands__image" src="images/sprite.svg#Coca" width="80" height="60" alt="Логотип Кока Кола">
 					</li>
 
 					<li class="brands__item">
-						<a class="brands__link" href="#"
-							style="background-image: url('images/sprite.svg#pepsi'); height: 31px;"></a>
+						<img class="brands__image" src="images/sprite.svg#pepsi" width="80" height="60" alt="Логотип Пепси Кола">
 					</li>
 
 					<li class="brands__item">
-						<a class="brands__link" href="#"
-							style="background-image: url('images/sprite.svg#redbull'); height: 49px;"></a>
+						<img class="brands__image" src="images/sprite.svg#redbull" width="80" height="60" alt="Логотип Редбул">
 					</li>
 
 					<li class="brands__item">
-						<a class="brands__link" href="#"
-							style="background-image: url('images/sprite.svg#fanta'); height: 59px;"></a>
+						<img class="brands__image" src="images/sprite.svg#fanta" width="80" height="60" alt="Логотип Фанта">
 					</li>
 				</ul>
 			</div>
@@ -1024,22 +1069,25 @@
 
 		<section class="news">
 			<div class="news__container container">
-				<h2 class="news__title title">Наши новости</h2>
 
-				<a class="news__link" href="#">Все новости</a>
+				<div class="news__title-inner">
+					<h2 class="news__title title">Наши новости</h2>
+
+					<a class="news__link" href="#">Все новости</a>
+				</div>
 
 				<ul class="news__list">
 					<li class="news__item">
 						<div class="news__date">
 							июль
-							<span>15</span>
+							<span class="news__day">15</span>
 						</div>
 
-						<a class="news__image-link" href="#">
-							<img class="news__image" src="images/news__image1.jpg" alt="Собитие лета">
-						</a>
+						<a class="news__item-link" href="#">
+							<span class="news__image-wrapper">
+								<img class="news__image" src="images/news__image1.jpg" width="416" max-height="240" alt="Собитие лета">
+							</span>
 
-						<a class="news__desc-link" href="#">
 							<p class="news__description">
 								Событие этого лета: распродажа сезонных фруктов в онлайн-маркете ФрешОК. Торопись, пока всё не
 								разобрали!
@@ -1050,14 +1098,14 @@
 					<li class="news__item">
 						<div class="news__date">
 							май
-							<span>07</span>
+							<span class="news__day">07</span>
 						</div>
 
-						<a class="news__image-link" href="#">
-							<img class="news__image" src="images/news__image2.jpg" alt="Выбор манго">
-						</a>
+						<a class="news__item-link" href="#">
+							<span class="news__image-wrapper">
+								<img class="news__image" src="images/news__image2.jpg" width="416" max-height="240" alt="Выбор манго">
+							</span>
 
-						<a class="news__desc-link" href="#">
 							<p class="news__description">
 								Шикарнейший выбор манго в нашем онлайн-маркете
 							</p>
@@ -1067,14 +1115,14 @@
 					<li class="news__item">
 						<div class="news__date">
 							февраль
-							<span>20</span>
+							<span class="news__day">20</span>
 						</div>
 
-						<a class="news__image-link" href="#">
-							<img class="news__image" src="images/news__image3.jpg" alt="Все о папайя">
-						</a>
+						<a class="news__item-link" href="#">
+							<span class="news__image-wrapper">
+								<img class="news__image" src="images/news__image3.jpg" width="416" max-height="240" alt="Все о папайя">
+							</span>
 
-						<a class="news__desc-link" href="#">
 							<p class="news__description">
 								Всё, что вы хотели знать о папайя
 							</p>
@@ -1094,15 +1142,20 @@
 
 				<div class="footer-top__inner">
 					<form class="footer-top__form footer-form" action="submit">
-						<label class="footer-form__label" for="footerInput" aria-label="Подписка на рассылку новостей">Следите
-							за нашими акциями</label>
+						<span class="footer-form__label">Следите за нашими акциями</span>
 
-						<input class="footer-form__input default-input" type="email" id="footerInput" name="footer-input"
-							placeholder="email@email.com" required>
+						<label class="sr-only" for="footerInput">Подписка на рассылку новостей</label>
 
-						<button class="footer-form__btn btn" type="submit">
-							подписаться
-						</button>
+						<div class="footer-form__inner">
+							<input class="footer-form__input default-input" type="email" id="footerInput" name="footer-input"
+								placeholder="email@email.com" required>
+
+							<button class="footer-form__btn btn" type="submit">
+								подписаться
+							</button>
+						</div>
+
+
 					</form>
 
 					<ul class="footer-top__list">
@@ -1169,29 +1222,41 @@
 							</li>
 						</ul>
 
-						<ul class="footer-address__list footer-social">
-							<li class="footer-social__item">
-								<a class="footer-social__link white-link"
-									style=" background-image: url('../images/sprite.svg#facebook');" href="#"
-									aria-label="Ссылка на Facebook"></a>
+						<ul class="footer-address__list social">
+							<li class="social__item">
+								<a class="social__link white-link" style=" background-image: url('../images/sprite.svg#facebook');"
+									href="#">
+									<span class="sr-only">
+										Ссылка на Facebook
+									</span>
+								</a>
 							</li>
 
-							<li class="footer-social__item">
-								<a class="footer-social__link white-link"
-									style=" background-image: url('../images/sprite.svg#youtube');" href="#"
-									aria-label="Ссылка на Youtube"></a>
+							<li class="social__item">
+								<a class="social__link white-link" style=" background-image: url('../images/sprite.svg#youtube');"
+									href="#">
+									<span class="sr-only">
+										Ссылка на Youtube
+									</span>
+								</a>
 							</li>
 
-							<li class="footer-social__item">
-								<a class="footer-social__link white-link"
-									style=" background-image: url('../images/sprite.svg#telegram');" href="#"
-									aria-label="Ссылка на Telegram"></a>
+							<li class="social__item">
+								<a class="social__link white-link" style=" background-image: url('../images/sprite.svg#telegram');"
+									href="#">
+									<span class="sr-only">
+										Ссылка на Telegram
+									</span>
+								</a>
 							</li>
 
-							<li class="footer-social__item">
-								<a class="footer-social__link white-link"
-									style=" background-image: url('../images/sprite.svg#instagram');" href="#"
-									aria-label="Ссылка на Instagram"></a>
+							<li class="social__item">
+								<a class="social__link white-link" style=" background-image: url('../images/sprite.svg#instagram');"
+									href="#">
+									<span class="sr-only">
+										Ссылка на Instagram
+									</span>
+								</a>
 							</li>
 						</ul>
 					</address>

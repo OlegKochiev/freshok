@@ -26,10 +26,6 @@ body {
 	overflow: hidden;
 }
 
-.main {
-	flex-grow: 1;
-}
-
 .container {
 	max-width: 1320px;
 	width: 100%;
@@ -37,7 +33,12 @@ body {
 	padding: 0 15px;
 }
 
+.main {
+	flex-grow: 1;
+}
+
 .logo {
+	flex: 0 0 200px;
 	transition: opacity 0.2s;
 
 	&:hover {
@@ -57,24 +58,46 @@ body {
 }
 
 .btn {
+	display: block;
 	padding: 12px 24px;
 	font-size: 18px;
+	line-height: 1.3;
 	background-color: $green-900;
 	color: $white;
 	border-radius: 6px;
-	transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
-
-	&:hover {
-		background-color: $green-1000;
-	}
+	transition: background-color 0.2s, box-shadow 0.2s, color 0.2s;
 
 	&:focus {
 		box-shadow: 0 0 0 4px $green-200;
 	}
 
+	&:hover {
+		background-color: $green-1000;
+	}
+
 	&:active {
 		color: rgba(255, 255, 255, 0.5);
-		box-shadow: inset 0 4px 4px transparentize($black, 0.75);
+		box-shadow: inset 0 4px 4px rgba($black, 0.25);
+	}
+
+	&--white {
+		margin: 0 auto;
+		background-color: $white;
+		color: $green-900;
+		border: 1px solid $green-900;
+
+		&:focus {
+			box-shadow: 0 0 0 4px rgba($green-900, 0.5);
+		}
+
+		&:hover {
+			background-color: $green-100;
+		}
+
+		&:active {
+			box-shadow: inset 0 10px 4px rgba($black, 0.1);
+			color: rgba($green-900, 0.5);
+		}
 	}
 
 }
@@ -103,13 +126,13 @@ body {
 		color 0.2s;
 	outline: transparent;
 
-	&:hover {
-		opacity: 0.6;
-	}
-
 	&:focus {
 		border-radius: 3px;
 		box-shadow: 0 0 0 3px $green-100;
+	}
+
+	&:hover {
+		opacity: 0.6;
 	}
 
 	&:active {
@@ -127,21 +150,26 @@ body {
 	font-size: 32px;
 	letter-spacing: 0.03em;
 	text-transform: uppercase;
-}
 
-.disabled {
-	display: none;
+	@include media-4(576) {
+		font-size: 24px;
+	}
 }
 
 .top-menu {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin-bottom: 49px;
+	flex-wrap: wrap;
+	margin-bottom: 44px;
 	letter-spacing: 0.02em;
 
+	@include media-4(576) {
+		margin-bottom: 20px;
+	}
 
 	&__item {
+		height: 34px;
 		margin-right: 28px;
 
 		&:last-child {
@@ -153,15 +181,17 @@ body {
 		position: relative;
 		font-size: 15px;
 		text-transform: uppercase;
-
-		font-family: "opensans", sans-serif;
 		font-weight: 700;
 		color: $dark-500;
 		border-radius: 3px;
-		border-bottom: 3px solid transparentize($green-900, 1);
+		border-bottom: 3px solid rgba($green-900, 0);
 		transition: color 0.3s,
 			border-color 0.3s,
 			box-shadow 0.3s;
+
+		@include media-4(576) {
+			font-size: 14px;
+		}
 
 		&:hover {
 			color: $green-900;
@@ -175,9 +205,22 @@ body {
 			color: $dark-500;
 			box-shadow: none;
 			border-radius: 0;
-			border-bottom: 3px solid transparentize($green-900, 0.8);
+			border-bottom: 3px solid rgba($green-900, 0.2);
 		}
 
+	}
+}
+
+.mixitup-control-active {
+	box-shadow: none;
+
+	&::before {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 3px;
+		bottom: -4px;
+		background-color: transparentize($green-900, 0.8);
 	}
 }
 
@@ -187,7 +230,7 @@ body {
 	flex-direction: column;
 	max-width: 300px;
 	width: 100%;
-	min-height: 409px;
+	height: 100%;
 	border: 1px solid $border-gray-900;
 	border-radius: 6px;
 	transition: border-color 0.3s;
@@ -216,25 +259,21 @@ body {
 
 		&:active {
 			&::before {
-				background-color: transparentize($yellow-900, 0.5);
+				background-color: rgba($yellow-900, 0.5);
 			}
 		}
 
 		&::before {
-			position: absolute;
 			content: '';
+			position: absolute;
 			width: 32px;
 			height: 28px;
 			top: 8px;
 			left: 6px;
 			background-color: $silver-600;
-			-webkit-mask-image: url('../images/sprite.svg#favourite');
 			mask-image: url('../images/sprite.svg#favourite');
-			-webkit-mask-size: cover;
 			mask-size: cover;
-			-webkit-mask-position: center;
 			mask-position: center;
-			-webkit-mask-repeat: no-repeat;
 			mask-repeat: no-repeat;
 			background-position: center center;
 			background-repeat: no-repeat;
@@ -244,7 +283,7 @@ body {
 
 		&--active {
 			&::before {
-				background-color: transparentize($yellow-900, 0.5);
+				background-color: rgba($yellow-900, 0.5);
 			}
 		}
 	}
@@ -260,8 +299,8 @@ body {
 		overflow: hidden;
 
 		&::before {
-			position: absolute;
 			content: '';
+			position: absolute;
 			width: 48px;
 			height: 48px;
 			top: 50%;
@@ -278,13 +317,13 @@ body {
 		}
 
 		&::after {
-			position: absolute;
 			content: '';
+			position: absolute;
 			top: 0;
 			bottom: 0;
 			left: 0;
 			right: 0;
-			background-color: transparentize($black, 0.9);
+			background-color: rgba($black, 0.1);
 			opacity: 0;
 			z-index: 1;
 			transition: opacity 0.3s;
@@ -299,13 +338,17 @@ body {
 			}
 		}
 
-		&:hover .product-card__image {
-			transform: scale(1.1);
+		&:hover {
+			.product-card {
+				&__image {
+					transform: scale(1.1);
+				}
+			}
 		}
 
 		&:focus {
 			outline: transparent;
-			box-shadow: 0 0 0 1px transparentize($green-900, 0.5);
+			box-shadow: 0 0 0 1px rgba($green-900, 0.5);
 		}
 
 
@@ -325,24 +368,31 @@ body {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		align-items: flex-start;
+		align-items: stretch;
 		margin-bottom: 15px;
 		padding: 0 18px;
+
+		@include media-4(576) {
+			padding: 0 12px;
+		}
+
+	}
+
+	&__inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 	}
 
 	&__name {
-		font-family: "Opensans", sans-serif;
 		font-weight: 600;
 		margin-bottom: 6px;
 	}
 
 	&__name-link {
-		-webkit-line-clamp: 3;
-		-webkit-box-orient: vertical;
-		line-clamp: 3;
-		box-orient: vertical;
+
+		@include line-clamp(3);
 		border-radius: 3px;
-		overflow-wrap: break-word;
 
 		&:hover {
 			text-decoration: underline;
@@ -350,7 +400,7 @@ body {
 
 		&:focus {
 			outline: transparent;
-			box-shadow: 0 0 0 1px transparentize($green-900, 0.5);
+			box-shadow: 0 0 0 1px rgba($green-900, 0.5);
 		}
 	}
 
@@ -365,8 +415,8 @@ body {
 				color: $silver-600;
 
 				&::before {
-					position: absolute;
 					content: "";
+					position: absolute;
 					width: 100%;
 					height: 50%;
 					border-bottom: 1px solid $silver-600;
@@ -411,9 +461,7 @@ body {
 	}
 
 	&__basket {
-		position: absolute;
-		bottom: 15px;
-		right: 17px;
+		position: relative;
 		width: 32px;
 		height: 32px;
 		padding: 0;
@@ -421,21 +469,55 @@ body {
 		background-color: $green-900;
 
 		&::before {
-			position: absolute;
 			content: '';
+			position: absolute;
 			top: 0;
 			left: 0;
 			width: 32px;
 			height: 32px;
 			background-color: $white;
-			-webkit-mask-image: url('../images/sprite.svg#basket');
 			mask-image: url('../images/sprite.svg#basket');
-			-webkit-mask-size: contain;
 			mask-size: contain;
-			-webkit-mask-position: center;
 			mask-position: center;
-			-webkit-mask-repeat: no-repeat;
 			mask-repeat: no-repeat;
+		}
+	}
+}
+
+.social {
+	display: flex;
+	margin-left: -6px;
+
+	&__item {
+		width: 44px;
+		height: 44px;
+		padding: 6px;
+	}
+
+	&__link {
+		display: block;
+		width: 32px;
+		height: 32px;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		transition: opacity 0.2s, filter 0.2s;
+		outline: transparent;
+
+
+		&:hover {
+			opacity: 0.7;
+		}
+
+		&:focus {
+			border-radius: 3px;
+			box-shadow: 0 0 0 3px $green-200;
+		}
+
+		&:active {
+			box-shadow: none;
+			opacity: 1;
+			filter: invert(7%) sepia(20%) saturate(218%) hue-rotate(37deg) brightness(99%) contrast(91%);
 		}
 	}
 }

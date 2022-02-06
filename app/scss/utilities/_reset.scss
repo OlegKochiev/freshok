@@ -34,7 +34,8 @@ h3,
 h4,
 h5,
 h6 {
-	font: inherit;
+	font-size: inherit;
+	font-weight: inherit;
 }
 
 ul {
@@ -46,11 +47,6 @@ img {
 	display: block;
 }
 
-button {
-	cursor: pointer;
-	outline: transparent;
-	box-shadow: transparent;
-}
 
 input,
 button,
@@ -62,6 +58,14 @@ address {
 	font: inherit;
 	background-color: transparent;
 	letter-spacing: inherit;
+}
+
+button {
+	cursor: pointer;
+}
+
+textarea {
+	resize: vertical;
 }
 
 a {

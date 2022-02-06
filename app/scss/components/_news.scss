@@ -1,0 +1,142 @@
+.news {
+
+	&__container {
+		position: relative;
+		padding-bottom: 72px;
+	}
+
+	&__title-inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 30px;
+
+		@include media-4(576) {
+			flex-direction: column;
+			align-items: flex-start;
+			margin-bottom: 24px;
+		}
+	}
+
+	&__title {
+		margin-bottom: 0;
+
+		@include media-4(576) {
+			margin-bottom: 10px;
+		}
+	}
+
+	&__link {
+		margin-right: 5px;
+		padding-bottom: 3px;
+		font-weight: 700;
+		text-transform: uppercase;
+		color: $green-900;
+		border-bottom: 2px solid;
+		transition: color 0.2s;
+
+		&:hover {
+			color: $green-1000;
+		}
+
+		&:focus {
+			outline: transparent;
+			border-bottom: none;
+			border-radius: 3px;
+			box-shadow: 0 0 0 3px $green-200;
+		}
+
+		&:active {
+			box-shadow: none;
+			border-radius: 0;
+			color: $green-900;
+			border-bottom: 2px solid $green-200;
+		}
+	}
+
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		column-gap: 30px;
+
+		@include media-4(576) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__item {
+		position: relative;
+		max-width: 410px;
+		margin-bottom: 15px;
+		box-shadow: 0 3px 3px transparentize($black, 0.25);
+		border-radius: 6px;
+
+		@include media-4(576) {
+			margin: 0 auto;
+		}
+	}
+
+	&__date {
+		position: absolute;
+		top: 0;
+		left: 20px;
+		padding: 17px 0 11px;
+		width: 65px;
+		font-size: 13px;
+		font-weight: 600;
+		font-family: "Ruda", sans-serif;
+		text-align: center;
+		background-color: $white;
+		border-radius: 0 0 4px 4px;
+	}
+
+	&__day {
+		display: block;
+		font-size: 30px;
+		line-height: 1;
+	}
+
+	&__item-link {
+		display: inline-block;
+		height: 100%;
+
+		&:focus {
+			outline: transparent;
+			border-radius: 3px;
+			box-shadow: 0 0 0 3px $green-200;
+		}
+
+		&:hover {
+			color: $green-900;
+		}
+
+		&:active {
+			box-shadow: none;
+			color: $green-1000;
+		}
+	}
+
+	&__image-wrapper {
+		display: block;
+		margin-bottom: 19px;
+	}
+
+	&__image {
+		border-radius: 6px 6px 0 0;
+	}
+
+	&__description {
+		margin: 0 18px 18px;
+		font-size: 16px;
+		font-weight: 600;
+		line-height: 1.5;
+		letter-spacing: normal;
+		transition: color 0.2s;
+
+		@include line-clamp(3);
+
+		@include media-3(768) {
+			font-size: 14px;
+		}
+	}
+}
