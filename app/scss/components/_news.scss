@@ -57,9 +57,10 @@
 	&__list {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		column-gap: 30px;
+		grid-gap: 30px;
 
 		@include media-4(576) {
+			grid-gap: 15px;
 			grid-template-columns: 1fr;
 		}
 	}

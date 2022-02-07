@@ -9,6 +9,7 @@
 
 		@include media-2(992) {
 			grid-template-columns: repeat(3, 1fr);
+			grid-gap: 5px;
 		}
 
 		@include media-4(576) {
@@ -18,6 +19,7 @@
 	}
 
 	&__item {
+		margin: 0 auto;
 		max-width: 300px;
 	}
 }

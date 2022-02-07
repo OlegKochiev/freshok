@@ -16,6 +16,7 @@
 
 		@include media-3(768) {
 			grid-template-columns: repeat(2, 1fr);
+			grid-gap: 15px;
 		}
 
 		@include media-4(576) {
