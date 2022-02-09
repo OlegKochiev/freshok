@@ -3,6 +3,10 @@
 	&__container {
 		position: relative;
 		padding-bottom: 72px;
+
+		@include media-4(576) {
+			padding-bottom: 48px;
+		}
 	}
 
 	&__title-inner {

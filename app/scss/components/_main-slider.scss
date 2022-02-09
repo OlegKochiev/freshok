@@ -1,22 +1,46 @@
 .main-slider {
-	&__item {}
 
 	&__item-inner {
-		padding-top: 142px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		min-height: 600px;
 		background-position: center center;
 		background-repeat: no-repeat;
 		background-size: cover;
+
+		@include media-2(992) {
+			padding-top: 120px;
+			padding-bottom: 120px;
+			min-height: 500px;
+		}
+
+		@include media-3(768) {
+			padding-top: 80px;
+			padding-bottom: 80px;
+			min-height: 400px;
+		}
+
+		@include media-4(576) {
+			padding-top: 60px;
+			padding-bottom: 60px;
+			min-height: 340px;
+		}
+
 	}
 
 	&__container {
 		max-width: 1290px;
 		width: 100%;
 		margin: 0 auto;
-		padding: 24px 24px;
+		padding: 24px;
 		letter-spacing: normal;
 		background-color: transparentize($white, 0.2);
 		border-radius: 4px;
+
+		@include media-3(768) {
+			padding: 15px;
+		}
 	}
 
 	&__title {
@@ -29,6 +53,21 @@
 		text-transform: uppercase;
 		color: $dark-500;
 
+		@include media-2(992) {
+			font-size: 44px;
+			max-width: 650px;
+		}
+
+		@include media-3(768) {
+			font-size: 28px;
+			max-width: 400px;
+		}
+
+		@include media-4(576) {
+			max-width: 300px;
+			font-size: 20px;
+		}
+
 		span {
 			color: $red-900;
 		}
@@ -37,11 +76,19 @@
 	&__text {
 		margin-bottom: 32px;
 		font-size: 16px;
+
+		@include media-4(576) {
+			margin-bottom: 24px;
+		}
 	}
 
 	&__link {
 		display: inline-block;
 		letter-spacing: 0.03em;
+
+		@include media-4(576) {
+			font-size: 14px;
+		}
 	}
 
 	&__arrow {

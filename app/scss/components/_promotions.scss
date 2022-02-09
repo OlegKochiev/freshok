@@ -2,6 +2,10 @@
 	padding: 71px 0;
 	background-color: $silver-100;
 
+	@include media-4(576) {
+		padding: 48px 0;
+	}
+
 	&__list {
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
@@ -20,6 +24,7 @@
 		}
 
 		@include media-4(576) {
+			margin-bottom: 24px;
 			grid-template-columns: 1fr;
 		}
 	}

@@ -1,6 +1,10 @@
 .top-products {
 	padding: 72px 0;
 
+	@include media-4(576) {
+		padding: 48px 0;
+	}
+
 	&__list {
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);

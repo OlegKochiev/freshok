@@ -2,6 +2,14 @@
 	background-color: $silver-100;
 	padding: 48px 0 29px;
 
+	@include media-3(768) {
+		padding: 40px 0 40px;
+	}
+
+	@include media-4(576) {
+		padding: 30px 0 30px;
+	}
+
 	&__list {
 		display: flex;
 		justify-content: center;
@@ -27,7 +35,8 @@
 		@include media-4(576) {
 			max-width: 300px;
 			margin-left: 76px;
-			margin-bottom: 34px;
+			margin-bottom: 30px;
+			padding-right: 15px;
 		}
 
 		&::before {
@@ -48,6 +57,10 @@
 
 		&:last-child {
 			margin-right: 0;
+
+			@include media-4(576) {
+				margin-bottom: 0;
+			}
 		}
 
 		&--delivery {

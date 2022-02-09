@@ -1,0 +1,140 @@
+.sidebar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 300px;
+  font-size: 18px;
+  font-weight: 400;
+  color: $dark-800;
+  background-color: $white;
+  text-transform: none;
+  z-index: 1;
+
+  &__logo-wrapper {
+    padding: 26px 26px 26px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__close-btn {
+    width: 18px;
+    height: 18px;
+    background-image: url('../../images/sprite.svg#close_btn');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__header {
+    padding: 15px;
+    background-color: $green-900;
+    margin-bottom: 15px;
+  }
+
+  &__nav-link {
+    position: relative;
+    font-size: 18px;
+    font-weight: 400;
+    color: $white;
+
+    &--sign-in {
+      padding-left: 40px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: -4px;
+        width: 25px;
+        height: 32px;
+        background-image: url('../../images/sprite.svg#user');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: 3;
+      }
+    }
+
+    &--registration {
+      padding-left: 25px;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 4px;
+        left: 10px;
+        width: 1px;
+        height: 20px;
+        background-color: $white;
+      }
+    }
+  }
+
+  &__catalogue-btn {
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 56px;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.3;
+    color: $dark-800;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: 16px;
+      mask-image: url('../../images/sprite.svg#menu_lines');
+      mask-repeat: no-repeat;
+      mask-position: center;
+      mask-size: contain;
+      width: 25px;
+      height: 17px;
+      background-color: $dark-800;
+    }
+  }
+
+  &__contacts {}
+
+  &__contacts-item {
+    margin-bottom: 20px;
+    padding-left: 54px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__contacts-link {
+    position: relative;
+
+
+    &--phone {
+      &::before {
+        top: 0;
+        height: 24px;
+        mask-image: url('../../images/sprite.svg#phone');
+      }
+    }
+
+    &--location {
+      &::before {
+        top: 10px;
+        height: 32px;
+        mask-image: url('../../images/sprite.svg#location');
+      }
+    }
+
+    &::before {
+      content: '';
+      left: -30px;
+      width: 24px;
+      position: absolute;
+      background-color: $dark-800;
+      mask-repeat: no-repeat;
+      mask-position: center;
+      mask-size: cover;
+    }
+  }
+}
