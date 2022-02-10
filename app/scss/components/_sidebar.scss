@@ -1,35 +1,49 @@
 .sidebar {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
-  width: 300px;
+  width: 0;
   font-size: 18px;
   font-weight: 400;
   color: $dark-800;
   background-color: $white;
   text-transform: none;
-  z-index: 1;
+  overflow-x: hidden;
+  transition: width 0.3s;
+  z-index: 10;
 
   &__logo-wrapper {
-    padding: 26px 26px 26px 15px;
+    padding: 26px 6px 26px 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
   &__close-btn {
-    width: 18px;
-    height: 18px;
-    background-image: url('../../images/sprite.svg#close_btn');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    position: relative;
+    width: 44px;
+    height: 44px;
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: 13px;
+      left: 13px;
+      width: 18px;
+      height: 18px;
+      background-image: url('../../images/sprite.svg#close_btn');
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
   }
 
   &__header {
-    padding: 15px;
+    min-width: 300px;
+    padding: 12px;
     background-color: $green-900;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
 
   &__nav-link {
@@ -73,32 +87,33 @@
 
   &__catalogue-btn {
     position: relative;
-    margin-bottom: 40px;
+    min-width: 300px;
+    margin-bottom: 35px;
     padding-left: 56px;
     font-size: 18px;
     font-weight: 600;
     letter-spacing: 0.3;
+    text-align: left;
     color: $dark-800;
 
     &::before {
       content: '';
       position: absolute;
-      top: 4px;
+      top: 6px;
       left: 16px;
       mask-image: url('../../images/sprite.svg#menu_lines');
       mask-repeat: no-repeat;
       mask-position: center;
       mask-size: contain;
       width: 25px;
-      height: 17px;
+      height: 15px;
       background-color: $dark-800;
     }
   }
 
-  &__contacts {}
-
   &__contacts-item {
-    margin-bottom: 20px;
+    min-width: 300px;
+    margin-bottom: 10px;
     padding-left: 54px;
 
     &:last-child {
@@ -108,7 +123,6 @@
 
   &__contacts-link {
     position: relative;
-
 
     &--phone {
       &::before {
@@ -128,7 +142,7 @@
 
     &::before {
       content: '';
-      left: -30px;
+      left: -39px;
       width: 24px;
       position: absolute;
       background-color: $dark-800;
@@ -137,4 +151,54 @@
       mask-size: cover;
     }
   }
+
+  &__menu {
+    padding-left: 15px;
+  }
+
+  .social {
+    margin-bottom: 24px;
+    padding: 10px 15px 15px;
+
+    &__link {
+      background-color: $black;
+      mask-repeat: no-repeat;
+      mask-position: center;
+      mask-size: cover;
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  .sidebar-menu {
+    &__item {
+      min-width: 300px;
+      margin-bottom: 12px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &__link {
+      display: block;
+    }
+  }
+}
+
+.sidebar-active {
+  width: 300px;
+}
+
+.body {
+  &::before {
+    transition: background-color 0.3s;
+  }
+}
+
+.body-disabled {
+  position: relative;
+  height: 100vh;
+  overflow-y: hidden;
+  background-color: rgba($black, 0.6);
 }

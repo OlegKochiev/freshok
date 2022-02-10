@@ -13,8 +13,34 @@
 		align-items: center;
 	}
 
-	&__burger-wrapper {
+	&__burger {
 		display: none;
+		justify-content: center;
+		align-items: center;
+		width: 44px;
+		height: 44px;
+		border-radius: 3px;
+		background-color: rgba($white, 0.1);
+
+		&::before {
+			content: '';
+			width: 30px;
+			height: 20px;
+			background-color: $white;
+			opacity: 1;
+			mask-image: url('../images/sprite.svg#burger_lines');
+			mask-repeat: no-repeat;
+			mask-position: center;
+			mask-size: contain;
+		}
+
+		@include media-2(992) {
+			display: flex;
+		}
+
+		&:hover {
+			background-color: rgba($white, 0.05);
+		}
 	}
 
 	&__list {
@@ -96,11 +122,7 @@
 	}
 }
 
-.burger {
-	@include media-2(992) {
-		display: block;
-	}
-}
+
 
 .header-bottom {
 	padding: 25px 0;
@@ -117,6 +139,10 @@
 	position: relative;
 	width: 240px;
 	margin-right: 4px;
+
+	@include media-2(992) {
+		display: none;
+	}
 
 	&__list {
 		visibility: hidden;
@@ -145,8 +171,6 @@
 			background-color: $green-100;
 		}
 
-
-
 		&::before,
 		&::after {
 			content: '';
@@ -159,7 +183,7 @@
 
 		&::before {
 			width: 25px;
-			height: 17px;
+			height: 15px;
 			top: 16px;
 			left: 18px;
 			background-image: url('../images/sprite.svg#menu_lines');
@@ -207,7 +231,7 @@
 		}
 	}
 
-	&--active {
+	&-active {
 		.header-catalog {
 			&__list {
 				visibility: visible;
@@ -264,6 +288,10 @@
 		border-radius: 0 6px 6px 0;
 		transition: background-color 0.2s,
 			color 0.2s;
+
+		@include media-1(1200) {
+			padding: 10px 30px;
+		}
 
 		&:hover {
 			background-color: rgba($dark-500, 0.85);
