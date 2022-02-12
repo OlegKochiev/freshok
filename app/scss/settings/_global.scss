@@ -10,8 +10,7 @@ body {
 	color: $dark-900;
 	line-height: 1.4;
 	letter-spacing: 0.03em;
-	background-color: rgba($black, 1);
-	transition: background-color 0.3s;
+	background-color: $white;
 }
 
 .sr-only {

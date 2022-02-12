@@ -45,14 +45,26 @@ $(function () {
 		}
 	});
 
-	$('.header-top__burger').on('click', function () {
-		$('.header-top__sidebar').toggleClass('sidebar-active');
-		$('body').toggleClass('body-disabled');
+	$(document).on('click', function (e) {
+		const burger = $(".header-top__burger");
+		const overlay = $(".overlay");
+		const closeSidebarBtn = $(".sidebar__close-btn");
+
+		switch (true) {
+			case burger.is(e.target):
+				toggleSidebar();
+				break;
+			case overlay.is(e.target) || closeSidebarBtn.is(e.target):
+				toggleSidebar();
+				break;
+		}
+
+		function toggleSidebar() {
+			$('.header-top__sidebar').toggleClass('sidebar-active');
+			$('.overlay').toggleClass('overlay-active');
+			$('body').toggleClass('body-no-scroll ');
+		}
 	});
 
-	$('.sidebar__close-btn').on('click', function () {
-		$('.header-top__sidebar').toggleClass('sidebar-active');
-		$('body').toggleClass('body-disabled');
-	})
 
 });

@@ -1,8 +1,12 @@
 .sidebar {
   position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   left: 0;
   top: 0;
   width: 0;
+  height: 100vh;
   font-size: 18px;
   font-weight: 400;
   color: $dark-800;
@@ -43,7 +47,7 @@
     min-width: 300px;
     padding: 12px;
     background-color: $green-900;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
 
   &__nav-link {
@@ -88,7 +92,7 @@
   &__catalogue-btn {
     position: relative;
     min-width: 300px;
-    margin-bottom: 35px;
+    margin-bottom: 5px;
     padding-left: 56px;
     font-size: 18px;
     font-weight: 600;
@@ -113,7 +117,7 @@
 
   &__contacts-item {
     min-width: 300px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     padding-left: 54px;
 
     &:last-child {
@@ -157,7 +161,7 @@
   }
 
   .social {
-    margin-bottom: 24px;
+    margin-bottom: 5px;
     padding: 10px 15px 15px;
 
     &__link {
@@ -173,15 +177,11 @@
   .sidebar-menu {
     &__item {
       min-width: 300px;
-      margin-bottom: 12px;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
     }
 
     &__link {
       display: block;
+      padding: 7px 0;
     }
   }
 }
@@ -190,10 +190,21 @@
   width: 300px;
 }
 
-.body-disabled {
-  position: relative;
-  height: 100vh;
+.body-no-scroll {
   overflow-y: hidden;
+}
 
-  background-color: rgba($black, 0.6);
+.overlay {
+  display: none;
+}
+
+.overlay-active {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  background-color: rgba($black, 0.5);
 }
