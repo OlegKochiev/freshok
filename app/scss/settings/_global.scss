@@ -38,8 +38,37 @@ body {
 }
 
 .logo {
-	flex: 0 0 200px;
+	min-width: 150px;
 	transition: opacity 0.2s;
+	margin-right: 10px;
+
+	@include media-3(768) {
+		min-width: 36px;
+	}
+
+	&__svg {
+		display: none;
+		width: 36px;
+		height: 40px;
+		background-color: $white;
+		mask-image: url('../images/sprite.svg#logo_short');
+		mask-position: center;
+		mask-repeat: no-repeat;
+		mask-size: cover;
+	}
+
+	@include media-3(768) {
+		&__img {
+			display: none;
+		}
+
+		&__svg {
+			display: block;
+		}
+
+	}
+
+
 
 	&:hover {
 		opacity: 0.5;
