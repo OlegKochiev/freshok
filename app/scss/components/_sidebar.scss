@@ -195,16 +195,17 @@
 }
 
 .overlay {
-  display: none;
+  background-color: rgba($black, 0);
+  transition: background-color 0.3s;
 }
 
 .overlay-active {
-  display: block;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 5;
-  background-color: rgba($black, 0.5);
+  transition: background-color 0.3s;
+  background-color: rgba($black, 0.2);
 }

@@ -51,7 +51,6 @@
 		display: flex;
 
 		@include media-2(992) {
-
 			&:last-child {
 				display: none;
 			}
@@ -68,31 +67,21 @@
 	}
 
 	&__link {
-		transition: opacity 0.2s;
+		transition: opacity 0.2s, color 0.2s;
 
 		@include media-2(992) {
-			font-size: 0;
-		}
-
-		&:hover {
-			opacity: 0.7;
-		}
-
-		&:focus {
-			outline: transparent;
-			border-radius: 3px;
-			box-shadow: 0 0 0 2px $green-200;
-		}
-
-		&:active {
-			box-shadow: none;
-			color: $green-200;
+			display: block;
+			width: 32px;
+			height: 32px;
 		}
 
 		&--delivery {
 			position: relative;
 			padding-left: 45px;
 
+			@include media-2(992) {
+				padding-left: 0;
+			}
 
 			&::before {
 				left: 0;
@@ -103,6 +92,10 @@
 		&--hotline {
 			position: relative;
 			padding-left: 55px;
+
+			@include media-2(992) {
+				padding-left: 0;
+			}
 
 			&::before {
 				left: 20px;
@@ -121,7 +114,33 @@
 				background-position: center center;
 				background-repeat: no-repeat;
 				background-size: contain;
+
+				@include media-2(992) {
+					top: 4px;
+					left: 0;
+				}
 			}
+		}
+
+		&:hover {
+			opacity: 0.7;
+		}
+
+		&:focus {
+			outline: transparent;
+			border-radius: 3px;
+			box-shadow: 0 0 0 2px $green-200;
+		}
+
+		&:active {
+			box-shadow: none;
+			color: $green-200;
+		}
+	}
+
+	&__link-span {
+		@include media-2(992) {
+			display: none;
 		}
 	}
 }
